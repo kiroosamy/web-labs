@@ -1,5 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 // Application state
 let todos = [];
 let currentFilter = 'all';
@@ -126,4 +125,3 @@ filterBtns.forEach(btn => {
         setFilter(filter, target);
     });
 });
-//# sourceMappingURL=app.js.map
