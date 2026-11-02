@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1 id= "title">welcome </h1>
+        <input id="name" placeholder="your name"/>
+        <button id="greet" >greet</button>
+        <ul id="list"></ul>
+
+
+        <script>
+            // function to greet the user
+            function addname(){
+                const input = document.getElementById('name');
+                const name = input.value.trim();
+
+                if (!name) return;
+
+                document.getElementById('title').textContent = `hello , ${name}!`;
+
+                const li =document.createElement('li');
+                li.textContent = name;
+                document.getElementById('list').appendChild(li);
+                input.value =''; // to empty the text box
+            }
+
+            function removename(e){
+                if (e.target.nodeName === 'LI'){
+                    const name = e.target.textContent;
+                    document.getElementById('title').textContent =`goodbye ,${name}`;
+                    e.target.remove();
+                }
+            }
+
+            document.getElementById('greet').addEventListener('click', addname);
+            document.getElementById('list').addEventListener('click', removename);
+        </script>
+
+    </body>
+</html>
